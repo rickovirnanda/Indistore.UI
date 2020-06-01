@@ -52,7 +52,7 @@ export class AuthService implements IAppService{
 
     login(user:UserLogin)
     {
-        this.http.post(`${this.serviceUri}/login`, user, {headers:this.defaultHeader})
+        return this.http.post(`${this.serviceUri}/login`, user, {headers:this.defaultHeader})
         .pipe(switchMap(
             (response:JwtToken)=>{
                 localStorage.setItem('token', response.accessToken);

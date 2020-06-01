@@ -39,8 +39,9 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './core/request/token-interceptor.service';
+import { ShareModule } from './share/share.module';
 
 @NgModule({
   imports: [
@@ -55,7 +56,9 @@ import { TokenInterceptor } from './core/request/token-interceptor.service';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    HttpClientModule,
+    ShareModule
   ],
   declarations: [
     AppComponent,
