@@ -81,6 +81,13 @@ export const routes: Routes = [
       {
         path: 'widgets',
         loadChildren: () => import('./main/widgets/widgets.module').then(m => m.WidgetsModule)
+      },
+
+      // Dev kita   
+
+      {
+        path:'category',
+        loadChildren:()=> import('./main/category/category.module').then(m=>m.CategoryModule)
       }
     ]
   },

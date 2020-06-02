@@ -39,6 +39,7 @@ export class TokenInterceptor implements HttpInterceptor{
 
         if (token !== undefined && token !== '' && token !== null) {
             const httpHeaders = new HttpHeaders({
+                'accept' : '*/*',
                 'Content-Type': request.headers.get('Content-Type'),
                 'Authorization': `Bearer ${token}`
             });

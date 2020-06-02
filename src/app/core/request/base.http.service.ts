@@ -13,9 +13,14 @@ export abstract class BaseHttpService{
     getDefaultAuthHttpRequestHeader():HttpHeaders
     {
         return new HttpHeaders({
+            'accept' : '*/*',
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${localStorage.getItem('token')}`
         })
+    }
+
+    getAll():Observable<Object>{
+      return this.http.get(`${this.serviceUri}`,  { headers: this.getDefaultAuthHttpRequestHeader() });
     }
 
     getById(id: number): Observable<Object> {
